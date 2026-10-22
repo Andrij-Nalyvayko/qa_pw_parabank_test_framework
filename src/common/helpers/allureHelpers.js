@@ -1,4 +1,24 @@
+import * as allure from 'allure-js-commons';
 import { camelCaseToPhrase, capitalize } from './stringHelpers';
+
+export const Severity = allure.Severity;
+
+/**
+ * Tags a test with Allure metadata that isn't already derived from the
+ * folder structure (see parseTestTreeHierarchy): severity and the
+ * feature/sub-feature (Allure's "story") this test belongs to.
+ */
+export async function tagTest({ severity, feature, story }) {
+  if (severity) {
+    await allure.severity(severity);
+  }
+  if (feature) {
+    await allure.feature(feature);
+  }
+  if (story) {
+    await allure.story(story);
+  }
+}
 
 export function parseTestTreeHierarchy(fileName, logger) {
   const testFolder = 'tests/';

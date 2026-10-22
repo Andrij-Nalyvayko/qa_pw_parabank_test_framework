@@ -1,0 +1,16 @@
+export const EMPTY_FIRST_NAME = 'First name is required.';
+export const EMPTY_LAST_NAME = '	Last name is required.';
+export const EMPTY_ADRESS = 'Address is required.';
+export const EMPTY_CITY = 'City is required.';
+export const EMPTY_STATE = 'State is required.';
+export const EMPTY_ZIP_CODE = 'Zip Code is required.';
+export const EMPTY_SSN = 'Social Security Number is required.';
+export const EMPTY_USERNAME = 'Username is required.';
+export const EMPTY_PASSWORD = '	Password is required.';
+export const COMFIRMATION_PASSSORD = 'Password confirmation is required.'
+export const INVALID_LOGIN = 'The username and password could not be verified.';
+export const EMPTY_LOGIN_FIELDS = 'Please enter a username and password.';
+export const CUSTOMER_NOT_FOUND = 'The customer information provided could not be found.';
+// The generic error page ParaBank shows for any unhandled backend exception:
+// an expired/missing session, a malformed number in a form field, etc.
+export const INTERNAL_ERROR = 'An internal error has occurred and has been logged.';
