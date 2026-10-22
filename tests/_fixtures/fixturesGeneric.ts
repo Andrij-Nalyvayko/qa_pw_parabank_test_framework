@@ -7,8 +7,8 @@ export const test = base.extend<
   {
     infoTestLog: string;
     addAllureTestHierarchy: string;
-    pages: Page[]; // Правильний тип масиву об'єктів Page
-    contextsNumber: number; // Має бути number, а не string
+    pages: Page[]; // Array of Page objects
+    contextsNumber: number; // Must be a number, not a string
   },
   {
     logger: Logger;
@@ -54,14 +54,14 @@ export const test = base.extend<
     { scope: 'test', auto: true },
   ],
 
-  // Опція для регулювання кількості паралельних контекстів
+  // Option to control the number of parallel contexts
   contextsNumber: [1, { option: true }],
 
   pages: async ({ browser, contextsNumber }, use) => {
     const contexts: BrowserContext[] = [];
     const pages: Page[] = [];
 
-    // Паралельне створення контекстів та сторінок
+    // Create contexts and pages in parallel
     for (let i = 0; i < contextsNumber; i++) {
       const context = await browser.newContext();
       const page = await context.newPage();
@@ -69,10 +69,10 @@ export const test = base.extend<
       pages.push(page);
     }
 
-    // Віддаємо масив сторінок у тест
+    // Hand the array of pages to the test
     await use(pages);
 
-    // CLEANUP: Автоматичне закриття контекстів після виконання тесту
+    // CLEANUP: automatically close the contexts after the test finishes
     await Promise.all(contexts.map((context) => context.close()));
   },
 });

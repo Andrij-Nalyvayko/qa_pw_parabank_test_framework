@@ -6,7 +6,7 @@ export class LoginPage {
     this.usernameField = page.locator('input[name="username"]');
     this.passwordField = page.locator('input[name="password"]');
     this.loginButton = page.getByRole('button', { name: 'Log In' });
-    this.accountOverview = page.getByRole('heading', { name: 'Accounts Overview' })
+    this.accountOverview = page.getByRole('heading', { name: 'Accounts Overview' });
     this.errorHeading = page.getByRole('heading', { name: 'Error!' });
   }
 

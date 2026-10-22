@@ -16,7 +16,7 @@ export class RegisterPage {
     this.passwordField = page.locator('[id="customer\\.password"]');
     this.confirmPasswordField = page.locator('#repeatedPassword');
     this.registerButton = page.getByRole('button', { name: 'Register' });
-    this.logoOutButton  = page.getByRole('link', { name: 'Log Out' })
+    this.logoOutButton = page.getByRole('link', { name: 'Log Out' });
   }
 
   async step(title, stepToRun) {
