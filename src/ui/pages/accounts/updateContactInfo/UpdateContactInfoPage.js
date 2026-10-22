@@ -15,8 +15,10 @@ export class UpdateContactInfoPage {
     this.errorHeading = page.getByRole('heading', { name: 'Error!' });
   }
 
+  
   async step(title, stepToRun) {
     return await testStep(title, stepToRun);
+
   }
 
   async open() {

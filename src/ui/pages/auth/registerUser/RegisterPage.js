@@ -132,7 +132,9 @@ export class RegisterPage {
   }
 
   async clickLogOut() {
-    await this.step(`Click to `)
+    await this.step(`Click to log out`, async () => {
+      await this.logoOutButton.click();
+    })  
   }
 
 }
